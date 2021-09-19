@@ -93,9 +93,12 @@ async def status_message_f(
                 msg += f"\n<code>{prog}</code>"
                 msg += f"\n<b>🗃 Downloaded</b>: <code>{file.progress_string()}</code> <b>of</b> <code>{file.total_length_string()}</code>"
                 msg += f"\n<b>📊Speed</b>: <code>{file.download_speed_string()}</code>,"
-                msg += f"<b>🔍ETA:</b> <code>{file.eta_string()}</code>"
+                msg += f"<b>🔍ETA:</b> <code>{file.eta_string()}</code>"  
+                #umen = f'<a href="tg://user?id={file.message.from_user.id}">{file.message.from_user.first_name}</a>'
+                #msg += f"\n<b>👤User:</b> {umen} (<code>{file.message.from_user.id}</code>)"
+                msg += f"\n<b>⚠️Warn:</b> <code>/warn {file.message.from_user.id}</code>"
                 msg += f"\n{msgg}"
-                msg += f"\n<b>⛔ To Stop:</b> <code>/cancel {file.gid}</code>"
+                msg += f"\n<b>⛔ Cancel:</b> <code>/cancel {file.gid}</code>"
                 msg += "\n"
 
         hr, mi, se = up_time(time.time() - BOT_START_TIME)
@@ -116,6 +119,8 @@ async def status_message_f(
             msg = "<b>⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊⑊ \n\n⚠️ No Active, Queued or Paused TORRENTs/Direct Links ⚠️</b>\n"
             msg = msg + "\n" + ms_g
             await to_edit.edit(msg)
+            #await asyncio.sleep(5)
+            #await msg.delete() #Delete Bot Message after 5 sec 
             break
         msg = msg + "\n" + ms_g
         if len(msg) > MAX_MESSAGE_LENGTH:  # todo - will catch later
