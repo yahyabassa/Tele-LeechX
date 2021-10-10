@@ -135,7 +135,7 @@ async def youtube_dl_call_back(bot, update):
     #
     if "popcornvakti" in youtube_dl_url:
         command_to_exec.append("--referer")
-        command_to_exec.append("https://film.popcornvakti.net")
+        command_to_exec.append("https://film.popcornvakti.net/")
     if "hls9" in youtube_dl_url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://hls9.closeload.com/")
