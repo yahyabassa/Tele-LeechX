@@ -22,7 +22,10 @@ async def extract_youtube_dl_formats(
         "--no-check-certificate",
         "-j",
         url,
-    ]
+    ] 
+    if "popcornvakti" in url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://film.popcornvakti.net")
     if "hls9" in url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://hls9.closeload.com/")
