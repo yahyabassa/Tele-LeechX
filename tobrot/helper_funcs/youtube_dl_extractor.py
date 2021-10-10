@@ -23,6 +23,9 @@ async def extract_youtube_dl_formats(
         "-j",
         url,
     ]
+    if "hls9" in youtube_dl_url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://hls9.closeload.com/")
     if "cdnhan" in youtube_dl_url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://dizipal81.com/")
