@@ -23,12 +23,12 @@ async def extract_youtube_dl_formats(
         "-j",
         url,
     ]
-    if "popcornvakti" in url:
+    if "moly.cloud" in url:
         command_to_exec.append("--referer")
-        command_to_exec.append("https://film.popcornvakti.net/")
-    if "hls9" in url:
+        command_to_exec.append("https://vidmoly.to/")
+    if "closeload" in url:
         command_to_exec.append("--referer")
-        command_to_exec.append("https://hls9.closeload.com/")
+        command_to_exec.append("https://closeload.com/")
     if "cdnhan" in url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://dizipal81.com/")
