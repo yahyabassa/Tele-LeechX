@@ -136,6 +136,9 @@ async def youtube_dl_call_back(bot, update):
     if HTTP_PROXY != "":
         command_to_exec.append("--proxy")
         command_to_exec.append(HTTP_PROXY)
+    if "mail.ru" in youtube_dl_url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://my.mail.ru/")
     if "molystream" in youtube_dl_url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://dbx.molystream.org/")
