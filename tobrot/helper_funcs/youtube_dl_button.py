@@ -134,8 +134,8 @@ async def youtube_dl_call_back(bot, update):
     command_to_exec.append("--restrict-filenames")
     #
     if "molystream" in youtube_dl_url:
-        command_to_exec.append("--geo-bypass-country")
-        command_to_exec.append("TR")
+        command_to_exec.append("--proxy")
+        command_to_exec.append("https://95.0.206.198:8080")
         command_to_exec.append("--referer")
         command_to_exec.append("https://dbx.molystream.org/")
     if "moly.cloud" in youtube_dl_url:
