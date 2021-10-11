@@ -26,6 +26,9 @@ async def extract_youtube_dl_formats(
     if HTTP_PROXY != "":
         command_to_exec.append("--proxy")
         command_to_exec.append(HTTP_PROXY)
+    if "mail.ru" in url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://my.mail.ru/")
     if "molystream" in url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://dbx.molystream.org/")
