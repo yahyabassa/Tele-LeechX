@@ -10,7 +10,7 @@ import os
 import pyrogram.types as pyrogram
 from tobrot import DEF_THUMB_NAIL_VID_S, LOGGER
 from tobrot.helper_funcs.display_progress import humanbytes
-
+from tobrot import HTTP_PROXY
 
 async def extract_youtube_dl_formats(
     url, cf_name, yt_dl_user_name, yt_dl_pass_word, user_working_dir
@@ -23,9 +23,10 @@ async def extract_youtube_dl_formats(
         "-j",
         url,
     ]
-    if "molystream" in url:
+    if HTTP_PROXY != "":
         command_to_exec.append("--proxy")
-        command_to_exec.append("https://95.0.206.198:8080")
+        command_to_exec.append(HTTP_PROXY)
+    if "molystream" in url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://dbx.molystream.org/")
     if "moly.cloud" in url:
