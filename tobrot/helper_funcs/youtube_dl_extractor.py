@@ -24,6 +24,8 @@ async def extract_youtube_dl_formats(
         url,
     ]
     if "molystream" in url:
+        command_to_exec.append("--geo-bypass-country")
+        command_to_exec.append("TR")
         command_to_exec.append("--referer")
         command_to_exec.append("https://dbx.molystream.org/")
     if "moly.cloud" in url:
