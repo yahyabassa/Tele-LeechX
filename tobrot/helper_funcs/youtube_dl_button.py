@@ -133,6 +133,9 @@ async def youtube_dl_call_back(bot, update):
     # command_to_exec.append("--quiet")
     command_to_exec.append("--restrict-filenames")
     #
+    if "molystream" in youtube_dl_url:
+        command_to_exec.append("--referer")
+        command_to_exec.append("https://dbx.molystream.org/")
     if "moly.cloud" in youtube_dl_url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://vidmoly.to/")
