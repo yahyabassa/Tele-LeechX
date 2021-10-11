@@ -133,12 +133,12 @@ async def youtube_dl_call_back(bot, update):
     # command_to_exec.append("--quiet")
     command_to_exec.append("--restrict-filenames")
     #
-    if "popcornvakti" in youtube_dl_url:
+    if "moly.cloud" in youtube_dl_url:
         command_to_exec.append("--referer")
-        command_to_exec.append("https://film.popcornvakti.net/")
-    if "hls9" in youtube_dl_url:
+        command_to_exec.append("https://vidmoly.to/")
+    if "closeload" in youtube_dl_url:
         command_to_exec.append("--referer")
-        command_to_exec.append("https://hls9.closeload.com/")
+        command_to_exec.append("https://closeload.com/")
     if "cdnhan" in youtube_dl_url:
         command_to_exec.append("--referer")
         command_to_exec.append("https://dizipal81.com/")
