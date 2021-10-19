@@ -43,7 +43,7 @@ async def extract_youtube_dl_formats(
         command_to_exec.append("https://closeload.com/")
     if "cdnhan" in url:
         command_to_exec.append("--referer")
-        command_to_exec.append("https://dizipal81.com/")
+        command_to_exec.append("https://d4msg.xyz/")
     if "hotstar" in url:
         command_to_exec.append("--geo-bypass-country")
         command_to_exec.append("IN")
